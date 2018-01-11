@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+cd "$(sudo dirname "$(readlink -f "$0")")"
+cd ..
+
+./transform/webapp/$.sh && ./transform/serve/$.sh || {
+	echo "webapp failed"
+	exit 1
+}
